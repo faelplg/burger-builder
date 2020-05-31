@@ -17,6 +17,7 @@ class ContactData extends Component {
   };
 
   orderHandler = (event) => {
+    console.log('this.props', this.props);
     event.preventDefault();
     this.setState({loading: true});
     const order = {
@@ -33,6 +34,7 @@ class ContactData extends Component {
       },
       deliveryMethod: 'fastest',
     };
+    console.log('order', order);
     axios
       .post('/orders.json', order)
       .then((response) => {
